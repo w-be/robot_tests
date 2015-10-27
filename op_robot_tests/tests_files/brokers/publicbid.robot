@@ -139,6 +139,7 @@ ${locator.questions[0].date}                                   xpath=//tr[@class
   Sleep   20
   ${tender_UAid}=  Get Text           id=mForm:nBid
   ${tender_UAid}=  Get Substring  ${tender_UAid}  19
+  Run Keyword if   '${tender_UAid}' == ''   Fail   Порожній UA_id
   ${Ids}       Convert To String  ${tender_UAid}
   [return]  ${Ids}
 
